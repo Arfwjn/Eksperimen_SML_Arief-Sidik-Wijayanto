@@ -1,6 +1,7 @@
 # Python
 # Virtual Environment
 venv_asah
+venv_submission/
 
 # Byte-code files
 __pycache__/
@@ -20,3 +21,6 @@ Thumbs.db
 # MLOps & Tracking
 # MLflow local tracking folder
 mlruns/
+
+# Data folders
+Membangun_model/
