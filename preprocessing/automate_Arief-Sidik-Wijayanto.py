@@ -109,7 +109,8 @@ def run_preprocessing(input_file_path, output_dir_path):
     return df_transformed
 
 if __name__ == '__main__':
-    # Logika penentuan PATH 
+    INPUT_PATH = './examScorePrediction_raw/Exam_Score_Prediction.csv'
+    OUTPUT_PATH = './examScorePrediction_preprocessing'
     if os.path.basename(os.getcwd()) == 'preprocessing':
         INPUT_PATH = '../examScorePrediction_raw/Exam_Score_Prediction.csv'
         OUTPUT_PATH = './examScorePrediction_preprocessing'    

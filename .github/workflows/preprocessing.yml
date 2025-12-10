@@ -21,7 +21,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12.7'
+          python-version: "3.12.7"
 
       # 3. Instal Dependencies
       - name: Install dependencies (pandas, scikit-learn, mlflow)
@@ -29,10 +29,10 @@ jobs:
         run: |
           pip install pandas scikit-learn
 
-      # 4. Jalankan Script Preprocessing 
+      # 4. Jalankan Script Preprocessing
       - name: Execute preprocessing script
         # Jalankan script dari root directory
-        run: python preprocessing/automate_Arief-Sidik-Wijayanto.py 
+        run: python preprocessing/automate_Arief-Sidik-Wijayanto.py
 
       # 5. Upload Artefak Hasil Preprocessing
       - name: Upload processed dataset artifact
@@ -40,7 +40,7 @@ jobs:
         with:
           name: processed-data-for-training
           # Path di mana kode automate_Arief-Sidik-Wijayanto.py menyimpan output CSV
-          path: examScorePrediction_preprocessing/data_preprocessing.csv 
-          
+          path: preprocessing/examScorePrediction_preprocessing/data_preprocessing.csv
+
       - name: Workflow Success Message
         run: echo "Preprocessing Complete. Artifact uploaded successfully."
