@@ -1,0 +1,22 @@
+# Python
+# Virtual Environment
+venv_asah
+
+# Byte-code files
+__pycache__/
+*.pyc
+
+# IDEs
+.vscode/
+.idea/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Notebook Files
+.ipynb_checkpoints
+
+# MLOps & Tracking
+# MLflow local tracking folder
+mlruns/
