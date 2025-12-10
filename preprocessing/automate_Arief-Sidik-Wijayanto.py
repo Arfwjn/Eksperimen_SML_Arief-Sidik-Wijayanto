@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.cluster import KMeans
 import numpy as np
 
-INPUT_PATH = '../examScorePrediction_raw/Exam_Score_Prediction.csv'
+INPUT_PATH = './examScorePrediction_raw/Exam_Score_Prediction.csv'
 
 # 1. LOAD DATA RAW
 df = pd.read_csv(INPUT_PATH)
@@ -46,7 +46,7 @@ preprocessor = ColumnTransformer(
 
 
 # 3. K-MEANS CLUSTERING PADA FITUR X
-print("1. Preprocessing Fitur")
+print("1. Preprocessing Fitur...")
 X_transformed = preprocessor.fit_transform(X_features)
 print(f"Dimensi Fitur setelah Preprocessing: {X_transformed.shape}")
 
@@ -70,13 +70,13 @@ y = X_transformed['cluster_label'].map(cluster_map).astype(int)
 X = X_transformed.drop(columns=['cluster_label', 'exam_score']).copy()
 del X_transformed
 
-print("\n--- 2. Statistik Kelas Hasil K-Means pada FITUR X ---")
+print("\n2. Statistik Kelas Hasil K-Means pada FITUR X...")
 bin_stats = df_processed.groupby(y)['exam_score'].agg(['min', 'mean', 'max', 'count'])
 print(bin_stats.to_markdown(numalign='left', stralign='left'))
 
 
 # 4. TRAIN-TEST SPLIT
-print("\n--- 3. Pembagian Data (Train-Test Split) ---")
+print("\n3. Pembagian Data (Train-Test Split)...")
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, 
     test_size=0.2, 
