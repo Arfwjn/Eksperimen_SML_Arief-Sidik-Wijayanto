@@ -12,6 +12,9 @@ jobs:
   run_preprocessing:
     runs-on: ubuntu-latest # Jalankan di mvirtual machine Ubuntu
 
+    permissions:
+      contents: write
+
     steps:
       # 1. Checkout Kode: Mengambil semua file dari repository
       - name: Checkout repository
