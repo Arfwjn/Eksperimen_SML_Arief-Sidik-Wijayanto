@@ -24,10 +24,10 @@ jobs:
           python-version: "3.12.7"
 
       # 3. Instal Dependencies
-      - name: Install dependencies (pandas, scikit-learn, mlflow)
+      - name: Install dependencies (pandas, scikit-learn, tabulate, mlflow)
         # Instal library yang dibutuhkan di automate_Arief-Sidik-Wijayanto.py
         run: |
-          pip install pandas scikit-learn
+          pip install pandas scikit-learn tabulate mlflow
 
       # 4. Jalankan Script Preprocessing
       - name: Execute preprocessing script
