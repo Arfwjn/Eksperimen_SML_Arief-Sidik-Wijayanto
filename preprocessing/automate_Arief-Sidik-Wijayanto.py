@@ -31,7 +31,9 @@ nominal_cols = ['gender', 'course', 'internet_access', 'study_method']
 ordinal_cols = ['sleep_quality', 'facility_rating', 'exam_difficulty']
 
 ordinal_categories = [
-    ['poor', 'average', 'good'], ['low', 'medium', 'high'], ['easy', 'moderate', 'hard']
+    ['poor', 'average', 'good'], 
+    ['low', 'medium', 'high'], 
+    ['easy', 'moderate', 'hard']
 ]
 
 preprocessor = ColumnTransformer(
