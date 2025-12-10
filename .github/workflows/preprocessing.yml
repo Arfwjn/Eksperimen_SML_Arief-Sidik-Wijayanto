@@ -42,5 +42,21 @@ jobs:
           # Path di mana kode automate_Arief-Sidik-Wijayanto.py menyimpan output CSV
           path: preprocessing/examScorePrediction_preprocessing/data_preprocessing.csv
 
+      # 6. Konfigurasi Git Identity
+      - name: Configure Git Identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # 7. Commit dan Push File CSV yang Diperbarui
+      - name: Commit processed data back to repository
+        run: |
+          git add preprocessing/examScorePrediction_preprocessing/data_preprocessing.csv
+          git commit -m "CI: Auto-generated updated preprocessing data via workflow" || echo "No changes to commit"
+          git push
+        env:
+          # GITHUB_TOKEN disediakan secara otomatis oleh GitHub Actions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Workflow Success Message
-        run: echo "Preprocessing Complete. Artifact uploaded successfully."
+        run: echo "Preprocessing Complete. Artifact uploaded and committed successfully."
