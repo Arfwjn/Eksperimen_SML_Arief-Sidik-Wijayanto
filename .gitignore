@@ -24,3 +24,5 @@ mlruns/
 
 # Data folders
 Membangun_model/
+Workflow-CI/
+Monitor-dan-Logging/
